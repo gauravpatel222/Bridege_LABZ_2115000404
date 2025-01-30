@@ -6,13 +6,14 @@ public class SubstringOccurence {
         String s = sc.next();
         String subString = sc.next();
 
-        int count = 0; 
-        int index = s.indexOf(subString); 
-        while (index != -1) {
-            count++; 
-            index = s.indexOf(subString, index + subString.length());
+        int c=0;
+        for(int i=0;i<=s.length()-subString.length();i++){
+            if(s.substring(i,i+subString.length()).equals(subString)){
+                c++;
+            }
+          System.out.println(  s.substring(i,i+subString.length()));
+           
         }
-
-        System.out.println("The substring occurs " + count + " times.");
+        System.out.println(c);;
     }
 }

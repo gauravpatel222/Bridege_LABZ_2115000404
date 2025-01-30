@@ -4,19 +4,17 @@ public class ToggleCase {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
-        StringBuilder str=new StringBuilder();
+        String ans="";
         for(int i=0;i<s.length();i++){
-            char ch=s.charAt(i);
-            if(Character.isUpperCase(ch)){
-                str.append(Character.toLowerCase(ch));
+            char sh=s.charAt(i);
+            if(Character.isUpperCase(sh)){
+                ans+=Character.toLowerCase(sh);
+
             }
-            else if(Character.isLowerCase(ch)){
-                str.append(Character.toUpperCase(ch));
-            }
-            else{
-                str.append(ch);
+            else if(Character.isLowerCase(sh)){
+                ans+=Character.toUpperCase(sh);
             }
         }
-        System.out.println(str.toString());
+        System.out.println(ans);
     }
 }

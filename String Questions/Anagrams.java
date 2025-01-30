@@ -9,6 +9,7 @@ public class Anagrams {
         String s2=sc.next();
         char[] arr1=s1.toCharArray();
         char[] arr2=s2.toCharArray();
+        
         Arrays.sort(arr1);
         Arrays.sort(arr2);
         if(arr1.length!=arr2.length){
