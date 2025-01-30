@@ -8,6 +8,7 @@ public class FrequentChar {
         char frequent=' ';
         int min=Integer.MIN_VALUE;
         int ans=0;
+      
        int[] map=new int[26];
        for(int i=0;i<s.length();i++){
         int ch=s.charAt(i)-97;

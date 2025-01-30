@@ -1,19 +1,21 @@
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        String s=sc.next();
-        String d="";
-        HashSet<Character> hs=new HashSet<>();
-        for(int i=0;i<s.length();i++){
-            hs.add(s.charAt(i));
-        }
-        for(Character c:hs){
-            d+=c;
-        }
-        System.out.println(d);
+        Scanner sc = new Scanner(System.in);
         
+        String s = sc.nextLine(); 
+
+        String d = "";  
+
+        for (int i = 0; i < s.length(); i++) {
+            char a = s.charAt(i);
+            
+            if (s.indexOf(a) == i) {
+                d += a;  
+            }
+        }
+
+        System.out.println("String after removing duplicates: " + d);
     }
 }
