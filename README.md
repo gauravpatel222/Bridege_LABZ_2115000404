@@ -1,73 +1,95 @@
-# BridgeLabz Java Assignments
----
-Welcome to my repository for BridgeLabz Java Assignments. Below is the summary of the topics covered, assignment details, and the respective branch for each.
+# Capgemini Training Assignments
 
-Table of Contents
+This repository contains the assignments completed during my training at Capgemini. Below is a detailed log of the assignments, topics covered, and submission dates.
 
+## Assignment Timeline
 
-Introduction
-This repository contains all the assignments and topics covered in BridgeLabz Java course. Every assignment is stored in separate branches, and each assignment corresponds to a particular date of the class.
+### 20/01/25
 
-## Class Topics and Assignments
+- **Topics Covered**:
+  - Features of Java: Key features of Java such as platform independence, object-oriented nature, and built-in memory management.
+  - Components of Java: Discussed the major components like JVM, JRE, and JDK.
+  - Difference between JVM, JRE, and JDK: Explanation of the roles and functions of each component in the Java ecosystem.
+- **Assignment**: Submitted assignment on the above topics.
 
-**January 16, 2025**
+### 21/01/25
 
-| **Topics covered in class** |
-|-------------------------|
-| Installation of Git and WSL |
-| Basic Linux Commands |
+- **Topics Covered**:
+  - Java Naming Conventions: Discussed the best practices for naming classes, variables, methods, and constants in Java.
+  - Data Types in Java: Overview of primitive and reference data types in Java.
+  - Operators in Java: Explanation of arithmetic, logical, and relational operators.
+  - Static in Java: Understanding the usage of the static keyword for class-level methods and variables.
+- **Assignment**: Submitted assignment on the above topics.
 
+### 22/01/25
 
+- **Topics Covered**:
+  - User Input: Explanation of how to take user input in Java using Scanner class.
+  - Best Programming Practices: Covered best practices such as code readability, commenting, and error handling.
+  - Solved Basic Practice Problems: Solved simple programming problems to reinforce concepts.
+- **Assignment**: Submitted assignment on User Input and Best Practices.
 
-Class Topics and Assignments
-January 19, 2025
-Assignment	Topic Covered	Branch Name
-Welcome to Bridgelabz	Introduction to Java	feature_19/01/2025
-Add Two Numbers	Basic Input/Output and Arithmetic	feature_19/01/2025
-Celsius to Fahrenheit Conversion	Temperature Conversion	feature_19/01/2025
-Area of a Circle	Math Operations and User Input	feature_19/01/2025
-Volume of a Cylinder	3D Geometry and Math Operations	feature_19/01/2025
-January 18, 2025
-Assignment	Topic Covered	Branch Name
-Calculate Simple Interest	Financial Calculations (Simple Interest)	feature_18/01/2025
-Perimeter of a Rectangle	Geometry and Perimeter Calculation	feature_18/01/2025
-Power Calculation	Math Operations (Exponentiation)	feature_18/01/2025
-Calculate Average of Three Numbers	Basic Average Calculation	feature_18/01/2025
-Convert Kilometers to Miles	Unit Conversion (Distance)	feature_18/01/2025
-January 17, 2025
-Assignment	Topic Covered	Branch Name
-Assignment 1	Introduction to Java	feature_17_01_2025
-Assignment 2	Variables and Data Types	feature_17_01_2025
-Branches
-Each assignment is committed and pushed to a separate branch. Below is the summary of the branches for your reference:
+### 23/01/25
 
-feature_19_01_2025: Contains assignments from January 19, 2025
-feature_18_01_2025: Contains assignments from January 18, 2025
-feature_17_01_2025: Contains assignments from January 17, 2025
-How to Run
-Clone this repository:
-` git clone https://github.com/ayush-singh787898/BridgeLabz_2115000255.git `
+- **Topics Covered**:
+  - Conditional Statements and Decision-Making Statements (if-else, loops): Introduction to control flow structures like if-else and loops (for, while).
+- **Assignment**: Submitted assignment on Conditional Statements.
 
-# BridgeLabz_2115000404
+### 24/01/25
 
+- **Event**: Inauguration Ceremony.
 
+### 25/01/25
 
-# Day-2 Assignment Added
-##  BridgeLabz_2115000404
+- **Topics Covered**:
+  - Arrays and Array Manipulation
+- **Assignment**: Submitted assignment on Arrays, discussing how to store and manipulate data collections.
 
-# Day-3 Assignment Added
+### 27/01/25
 
-# Day-4 Assignment Added
+- **Topics Covered**:
+  - Java Methods: Introduction to creating and using methods for code reusability and organization.
+- **Assignment**: Submitted assignment on Java Methods.
 
-# Day-5 Assignment Add
- ## Assignment of 27-01-2025 has completed 
- ## Assignment of 28-01-2025 has completed 
- ## Assignment of 30-01-2025 has completed 
+### 28/01/25
 
- ##  ## Assignment of 31-01-2025 has completed which is based on Constructor
+- **Topics Covered**:
+  - Java Strings: Covered string manipulation, concatenation, and string methods in Java.
+- **Assignment**: Submitted assignment on Java Strings.
 
+### 29/01/25
 
+- **Topics Covered**:
+  - Built-in Functions in Java: Discussed common built-in functions in Java like mathematical, string, and utility functions.
+- **Assignment**: Submitted assignment on Strings and Built-in Functions.
 
+### 30/01/25
 
+- **Topics Covered**:
+  - Java OOPs Fundamentals: Introduction to Object-Oriented Programming concepts such as inheritance, polymorphism, and encapsulation.
+- **Assignment**: Submitted assignment on OOPs Fundamentals.
 
+### 31/01/25
 
+- **Topics Covered**:
+  - Class and Objects in Java: Detailed discussion on creating classes, objects, and understanding constructors and methods.
+- **Assignment**: Submitted assignment on Java Class and Objects.
+
+### 01/02/25
+
+- **Topics Covered**:
+  - Java Constructor: Introduction to constructors and their role in object initialization.
+  - Instance and Class Variables: Explained the difference between instance variables and class variables.
+- **Assignment**: Submitted assignment on Constructor, Instance and Class Variables, and Access Modifiers.
+
+### 02/02/25
+
+- **Topics Covered**:
+  - Access Modifiers: Overview of access control in Java using public, private, protected, and default.
+- **Assignment**: Submitted assignment on Constructor, Instance and Class Variables, and Access Modifiers.
+
+### 04/02/25
+
+- **Topics Covered**:
+  - `this`, `static`, `final` keyword and `instanceof` operator: Explained the usage and significance of these keywords in Java programming.
+- **Assignment**: Submitted assignment on the above topics.
