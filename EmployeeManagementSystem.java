@@ -1,81 +1,119 @@
-class Employee {
-    String name;
-    int id;
-    int salary;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Employee(String name, int id, int salary) {
+abstract class Employee {
+    private int employeeId;
+    private String name;
+    private double baseSalary;
+
+    public Employee(int employeeId, String name, double baseSalary) {
+        this.employeeId = employeeId;
         this.name = name;
-        this.id = id;
-        this.salary = salary;
+        this.baseSalary = baseSalary;
     }
 
-    public void display() {
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public abstract double calculateSalary();
+
+    public void displayDetails() {
+        System.out.println("Employee ID: " + employeeId);
         System.out.println("Name: " + name);
-        System.out.println("ID: " + id);
-        System.out.println("Salary: " + salary);
+        System.out.println("Base Salary: $" + baseSalary);
+        System.out.println("Total Salary: $" + calculateSalary());
     }
 }
 
-class Manager extends Employee {
-    int teamSize;
+interface Department {
+    void assignDepartment(String departmentName);
+    String getDepartmentDetails();
+}
 
-    public Manager(String name, int id, int salary, int teamSize) {
-        super(name, id, salary);
-        this.teamSize = teamSize;
+class FullTimeEmployee extends Employee implements Department {
+    private double fixedSalary;
+    private String department;
+
+    public FullTimeEmployee(int employeeId, String name, double baseSalary, double fixedSalary) {
+        super(employeeId, name, baseSalary);
+        this.fixedSalary = fixedSalary;
     }
 
     @Override
-    public void display() {
-        super.display();
-        System.out.println("Team Size: " + teamSize);
+    public double calculateSalary() {
+        return getBaseSalary() + fixedSalary;
+    }
+
+    @Override
+    public void assignDepartment(String departmentName) {
+        this.department = departmentName;
+    }
+
+    @Override
+    public String getDepartmentDetails() {
+        return "Department: " + department;
     }
 }
 
-class Developer extends Employee {
-    String programmingLanguage;
+class PartTimeEmployee extends Employee implements Department {
+    private int workHours;
+    private double hourlyRate;
+    private String department;
 
-    public Developer(String name, int id, int salary, String programmingLanguage) {
-        super(name, id, salary);
-        this.programmingLanguage = programmingLanguage;
+    public PartTimeEmployee(int employeeId, String name, double baseSalary, int workHours, double hourlyRate) {
+        super(employeeId, name, baseSalary);
+        this.workHours = workHours;
+        this.hourlyRate = hourlyRate;
     }
 
     @Override
-    public void display() {
-        super.display();
-        System.out.println("Programming Language: " + programmingLanguage);
-    }
-}
-
-class Intern extends Employee {
-    int internshipDuration;
-
-    public Intern(String name, int id, int salary, int internshipDuration) {
-        super(name, id, salary);
-        this.internshipDuration = internshipDuration;
+    public double calculateSalary() {
+        return getBaseSalary() + (workHours * hourlyRate);
     }
 
     @Override
-    public void display() {
-        super.display();
-        System.out.println("Internship Duration: " + internshipDuration + " months");
+    public void assignDepartment(String departmentName) {
+        this.department = departmentName;
+    }
+
+    @Override
+    public String getDepartmentDetails() {
+        return "Department: " + department;
     }
 }
 
 public class EmployeeManagementSystem {
     public static void main(String[] args) {
-        Employee manager = new Manager("Gaurav Patel", 101, 90000, 12);
-        Employee developer = new Developer("Gaurav Patel", 102, 75000, "MERN Stack");
-        Employee intern = new Intern("Gaurav Patel", 103, 25000, 6);
+        List<Employee> employees = new ArrayList<>();
 
-        System.out.println("Manager Details:");
-        manager.display();
-        System.out.println("-------------------------------");
+        FullTimeEmployee e1 = new FullTimeEmployee(101, "Gaurav Patel", 50000, 20000);
+        e1.assignDepartment("Engineering");
 
-        System.out.println("Developer Details:");
-        developer.display();
-        System.out.println("-------------------------------");
+        PartTimeEmployee e2 = new PartTimeEmployee(102, "Raj Singh", 20000, 80, 200);
+        e2.assignDepartment("Support");
 
-        System.out.println("Intern Details:");
-        intern.display();
+        employees.add(e1);
+        employees.add(e2);
+
+        for (Employee emp : employees) {
+            emp.displayDetails();
+            if (emp instanceof Department) {
+                System.out.println(((Department) emp).getDepartmentDetails());
+            }
+            System.out.println("---------------------------------");
+        }
     }
 }

@@ -1,86 +1,76 @@
+abstract class BankAccount {
+    private String accountNumber, holderName;
+    protected double balance;
 
-class BankAccount {
-    String accountNumber;
-    double balance;
-
-    public BankAccount(String accountNumber, double balance) {
+    public BankAccount(String accountNumber, String holderName, double balance) {
         this.accountNumber = accountNumber;
+        this.holderName = holderName;
         this.balance = balance;
     }
 
-    public void displayAccountInfo() {
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) balance -= amount;
+    }
+
+    public abstract double calculateInterest();
+
+    public void displayDetails() {
         System.out.println("Account Number: " + accountNumber);
+        System.out.println("Holder Name: " + holderName);
         System.out.println("Balance: $" + balance);
     }
 }
 
+interface Loanable {
+    void applyForLoan();
+    double calculateLoanEligibility();
+}
 
 class SavingsAccount extends BankAccount {
-    double interestRate;
-
-    public SavingsAccount(String accountNumber, double balance, double interestRate) {
-        super(accountNumber, balance);
-        this.interestRate = interestRate;
+    public SavingsAccount(String accountNumber, String holderName, double balance) {
+        super(accountNumber, holderName, balance);
     }
 
-    @Override
-    public void displayAccountInfo() {
-        super.displayAccountInfo();
-        System.out.println("Account Type: Savings Account");
-        System.out.println("Interest Rate: " + interestRate + "%");
+    public double calculateInterest() {
+        return balance * 0.04;
     }
 }
 
-class CheckingAccount extends BankAccount {
-    double withdrawalLimit;
-
-    public CheckingAccount(String accountNumber, double balance, double withdrawalLimit) {
-        super(accountNumber, balance);
-        this.withdrawalLimit = withdrawalLimit;
+class CurrentAccount extends BankAccount implements Loanable {
+    public CurrentAccount(String accountNumber, String holderName, double balance) {
+        super(accountNumber, holderName, balance);
     }
 
-    @Override
-    public void displayAccountInfo() {
-        super.displayAccountInfo();
-        System.out.println("Account Type: Checking Account");
-        System.out.println("Withdrawal Limit: $" + withdrawalLimit);
+    public double calculateInterest() {
+        return balance * 0.02;
     }
-}
 
-
-class FixedDepositAccount extends BankAccount {
-    int depositTerm;
-
-    public FixedDepositAccount(String accountNumber, double balance, int depositTerm) {
-        super(accountNumber, balance);
-        this.depositTerm = depositTerm;
+    public void applyForLoan() {
+        System.out.println("Loan application submitted for: " + calculateLoanEligibility());
     }
-    @Override
-    public void displayAccountInfo() {
-        super.displayAccountInfo();
-        System.out.println("Account Type: Fixed Deposit Account");
-        System.out.println("Deposit Term: " + depositTerm + " months");
+
+    public double calculateLoanEligibility() {
+        return balance * 5;
     }
 }
-
 
 public class BankingSystem {
     public static void main(String[] args) {
-        // Creating different types of accounts
-        BankAccount savings = new SavingsAccount("SA12345", 5000, 4.5);
-        BankAccount checking = new CheckingAccount("CA67890", 2000, 1000);
-        BankAccount fixedDeposit = new FixedDepositAccount("FD11223", 10000, 12);
+        BankAccount acc1 = new SavingsAccount("123456789", "Gaurav Patel", 5000);
+        CurrentAccount acc2 = new CurrentAccount("987654321", "Gaurav Patel", 8000);
 
-        // Display account details
-        System.out.println("Savings Account Details:");
-        savings.displayAccountInfo();
-        System.out.println("------------------------------");
+        acc1.displayDetails();
+        System.out.println("Interest: $" + acc1.calculateInterest());
+        System.out.println("---------------------------------");
 
-        System.out.println("Checking Account Details:");
-        checking.displayAccountInfo();
-        System.out.println("------------------------------");
-
-        System.out.println("Fixed Deposit Account Details:");
-        fixedDeposit.displayAccountInfo();
+        acc2.displayDetails();
+        System.out.println("Interest: $" + acc2.calculateInterest());
+        acc2.applyForLoan();
+        // ((Loanable) acc2).applyForLoan();
+        System.out.println("---------------------------------");
     }
 }
