@@ -87,12 +87,24 @@ This repository contains the assignments completed during my training at Capgemi
 - **Topics Covered**:
   - Access Modifiers: Overview of access control in Java using public, private, protected, and default.
 - **Assignment**: Submitted assignment on Constructor, Instance and Class Variables, and Access Modifiers.
-- Questions were on Book,Employee hotel classes.
-
 
 ### 04/02/25
 
 - **Topics Covered**:
-  - `this`, `static`, `final` keyword and `instanceof` operator: Explained the usage and significance of these keywords in Java programming.
+  - this, static, final keyword and instanceof operator: Explained the usage and significance of these keywords in Java programming.
 - **Assignment**: Submitted assignment on the above topics.
-- Questions were on Book,Employee hotel classes.
+
+### 06/02/25
+
+- **Topics Covered**:
+  - Object-Oriented Design Principles: Discussed fundamental principles like SOLID, DRY, and KISS for designing maintainable and scalable applications.
+- **Assignment**: Submitted assignment on Object-Oriented Design Principles.
+
+### 07/02/25
+
+- **Topics Covered**:
+  - Inheritance in Java: Covered types of inheritance, method overriding, and super keyword usage.
+- **Assignment**: Submitted assignment on Inheritance in Java.
+- Questions were on  librarysystem,moviesystem
+
+  
