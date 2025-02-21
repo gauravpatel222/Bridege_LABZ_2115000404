@@ -1,0 +1,9 @@
+INFO: System started successfully.
+WARNING: Low memory detected.
+error Unable to connect to the database.
+info: User logged in successfully.
+error File not found in directory.
+CRITICAL: System crashed due to an unknown error.
+INFO: Process completed without any issues.
+Error: Network timeout occurred.
+Debug: Variable x is not initialized.
